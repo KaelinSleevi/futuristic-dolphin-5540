@@ -1,0 +1,9 @@
+<h1><%= @mechanics.name %></h1>
+
+<h4>Years of Experience: <%= @mechanics.years_of_experience %>
+
+<div id="mechanicride_<%= @mechanics.ride.id %>">
+    <h4>Ride Currently Working On: <%= @mechanics.ride.name %>
+        <p>Currently Open? <%= @mechanics.ride.open %></p>
+        <p>Thrill Rating: <%= @mechanics.ride.thrill_rating%></p>
+ </div>

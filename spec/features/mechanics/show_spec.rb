@@ -18,12 +18,12 @@ RSpec.describe Mechanic do
 
     it 'can display the mechanics, years of experience, and the rides they work on' do
         # And the rides are listed by thrill rating in descending order (most thrills first)
-        visit "/mechanics/#{@mechanic.id}"
+        visit "/mechanics/#{@kara.id}"
 
-        expect(page).to have_content(@kara.name)
-        expect(page).to have_content(@kara.years_of_experience)
-        expect(page).to have_content(@hurler.name)
-        expect(page).to have_content(@hurler.open)
-        expect(page).to have_content(@hurler.thrill_rating)
+        expect(page).to have_content("Kara Smith")
+        expect(page).to have_content("Years of Experience: 8")
+        expect(page).to have_content("Ride Currently Working On: The Hurler")
+        expect(page).to have_content("Currently Open? true")
+        expect(page).to have_content("Thrill Rating: 7")
     end
 end

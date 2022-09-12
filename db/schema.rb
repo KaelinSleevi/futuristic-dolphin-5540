@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2022_09_12_153526) do
     t.integer "years_of_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "rides_id"
-    t.index ["rides_id"], name: "index_mechanics_on_rides_id"
+    t.bigint "ride_id"
+    t.index ["ride_id"], name: "index_mechanics_on_ride_id"
   end
 
   create_table "rides", force: :cascade do |t|
@@ -41,6 +41,6 @@ ActiveRecord::Schema.define(version: 2022_09_12_153526) do
     t.index ["amusement_park_id"], name: "index_rides_on_amusement_park_id"
   end
 
-  add_foreign_key "mechanics", "rides", column: "rides_id"
+  add_foreign_key "mechanics", "rides"
   add_foreign_key "rides", "amusement_parks"
 end

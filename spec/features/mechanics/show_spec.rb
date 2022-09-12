@@ -42,7 +42,7 @@ RSpec.describe Mechanic do
         visit "/mechanics/#{@kara.id}"
 
         expect(page).to have_content("Add A Ride For This Mechanic:")
-        fill_in 'Search', with: "The Scrambler"
-        click_button("Add To Workload")
+        fill_in 'Ride Id:', with: "#{@scrambler.id}"
+        click_button("Submit")
     end
 end

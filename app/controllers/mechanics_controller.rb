@@ -13,7 +13,6 @@ class MechanicsController < ApplicationController
 
     def edit
         @mechanics = Mechanic.find(params[:id])
-
     end
 
     def update
@@ -22,6 +21,16 @@ class MechanicsController < ApplicationController
         @mechanics.update(params[:ride_id])
         @mechanics.save
         redirect_to "/mechanics/#{@mechanics.id}"
+
+        if params[:ride_id] != nil
+            @rides = Ride.find(params[:ride_id])
+
+            if @mechanics.save
+                @mechanics.ride << @rides
+            else
+                redirect_to "/mechanics/#{@mechanics.id}"
+            end
+        end
     end
 
 end

@@ -25,5 +25,16 @@ RSpec.describe Mechanic do
         expect(page).to have_content("Ride Currently Working On: The Hurler")
         expect(page).to have_content("Currently Open? true")
         expect(page).to have_content("Thrill Rating: 7")
+
+        expect(page).to have_content("Ride Currently Working On: The Scrambler")
+        expect(page).to have_content("Currently Open? true")
+        expect(page).to have_content("Thrill Rating: 4")
+    end
+
+    it 'displays the rides in order by thrill rating' do
+        visit "/mechanics/#{@kara.id}"
+
+        expect("The Hurler").to appear_before("The Scrambler")
+        expect("The Scrambler").to_not appear_before("The Hurler")
     end
 end

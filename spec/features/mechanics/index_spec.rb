@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-
-
 RSpec.describe Mechanic do
     before(:each) do
         @six_flags = AmusementPark.create!(name: 'Six Flags', admission_cost: 75)
@@ -42,7 +40,7 @@ RSpec.describe Mechanic do
 
     it 'can show the average years of experience over all mechanics' do
         visit "/mechanics"
-        
+
         expect(page).to have_content("Average Years of Experience: 7.67")
     end
 end

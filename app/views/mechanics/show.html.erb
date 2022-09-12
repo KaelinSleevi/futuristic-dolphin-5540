@@ -10,7 +10,7 @@
 
 <h4> Add A Ride For This Mechanic: </h4>
   <%= form_with url: "/mechanics/#{@mechanics.id}", method: :get, local: true do |f| %>
-    <%= f.label :search %>
+    <%= f.label :search, 'Ride Id:' %>
     <%= f.text_field :search, params: :search %>
-    <%= f.submit "Add To Workload" %>
+    <%= f.submit "Submit" %>
   <% end %>

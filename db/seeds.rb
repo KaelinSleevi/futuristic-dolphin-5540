@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AmusementPark.destroy_all
 Ride.destroy_all
+Mechanic.destroy_all
 
 @six_flags = AmusementPark.create!(name: 'Six Flags', admission_cost: 75)
 @universal = AmusementPark.create!(name: 'Universal Studios', admission_cost: 80)
@@ -16,3 +17,7 @@ Ride.destroy_all
 @ferris = @six_flags.rides.create!(name: 'Ferris Wheel', thrill_rating: 7, open: false)
 
 @jaws = @universal.rides.create!(name: 'Jaws', thrill_rating: 5, open: true)
+
+@kara = Mechanic.create!(name: "Kara Smith", years_of_experience: 8)
+@steve = Mechanic.create!(name: "Steve Jones", years_of_experience: 3)
+@mike = Mechanic.create!(name: "Mike O'Reilly", years_of_experience: 12)

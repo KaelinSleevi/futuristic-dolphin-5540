@@ -1,3 +1,3 @@
-class Rides < ApplicationController
+class RidesController < ApplicationController
     
 end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 
-Rspec.describe Mechanic do
+RSpec.describe Mechanic do
     before(:each) do
         @six_flags = AmusementPark.create!(name: 'Six Flags', admission_cost: 75)
         @universal = AmusementPark.create!(name: 'Universal Studios', admission_cost: 80)
@@ -13,13 +13,14 @@ Rspec.describe Mechanic do
 
         @jaws = @universal.rides.create!(name: 'Jaws', thrill_rating: 5, open: true)
 
-        @kara = Mechanic.create!(name: "Kara Smith", years_of_experience: 8)
-        @steve = Mechanic.create!(name: "Steve Jones", years_of_experience: 3)
-        @mike = Mechanic.create!(name: "Mike O'Reilly", years_of_experience: 12)
+        @kara = @hurler.mechanics.create!(name: "Kara Smith", years_of_experience: 8)
+        @steve = @scrambler.mechanics.create!(name: "Steve Jones", years_of_experience: 3)
+        @mike = @ferris.mechanics.create!(name: "Mike O'Reilly", years_of_experience: 12)
     end
 
     it 'can list each mechanic and their years of experience' do
- 
+        visit "/mechanics"
+        
         within("#mechanic_#{@kara.id}") do
             expect(page).to have_content(@kara.name)
             expect(page).to have_content(@kara.years_of_experience)

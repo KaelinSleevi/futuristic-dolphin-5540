@@ -18,6 +18,6 @@ Mechanic.destroy_all
 
 @jaws = @universal.rides.create!(name: 'Jaws', thrill_rating: 5, open: true)
 
-@kara = Mechanic.create!(name: "Kara Smith", years_of_experience: 8)
-@steve = Mechanic.create!(name: "Steve Jones", years_of_experience: 3)
-@mike = Mechanic.create!(name: "Mike O'Reilly", years_of_experience: 12)
+@kara = @hurler.mechanics.create!(name: "Kara Smith", years_of_experience: 8)
+@steve = @scrambler.mechanics.create!(name: "Steve Jones", years_of_experience: 3)
+@mike = @ferris.mechanics.create!(name: "Mike O'Reilly", years_of_experience: 12)

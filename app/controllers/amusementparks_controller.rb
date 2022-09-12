@@ -1,3 +1,3 @@
-class AmusementParks < ApplicationController
+class AmusementParksController < ApplicationController
     
 end

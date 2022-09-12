@@ -3,7 +3,7 @@ class Mechanic < ApplicationRecord
 
     belongs_to :ride
 
-    def average_years_of_experience
-        self.average(:years_of_experience)
+    def self.average_years_of_experience
+        average(:years_of_experience).round(2)
     end
 end

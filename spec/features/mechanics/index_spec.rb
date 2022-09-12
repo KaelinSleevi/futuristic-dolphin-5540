@@ -20,7 +20,7 @@ RSpec.describe Mechanic do
 
     it 'can list each mechanic and their years of experience' do
         visit "/mechanics"
-        
+
         within("#mechanic_#{@kara.id}") do
             expect(page).to have_content(@kara.name)
             expect(page).to have_content(@kara.years_of_experience)
@@ -41,6 +41,8 @@ RSpec.describe Mechanic do
     end
 
     it 'can show the average years of experience over all mechanics' do
-        expect(page).to have_content("Average Years of Experience: 7.6")
+        visit "/mechanics"
+        
+        expect(page).to have_content("Average Years of Experience: 7.67")
     end
 end
